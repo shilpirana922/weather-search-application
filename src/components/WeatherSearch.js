@@ -32,15 +32,15 @@ function WeatherSearch() {
 
     let emoji = null;
     if (data.main !== undefined) {
-        if (data.weather[0]?.main == "Clouds")
+        if (data.weather[0]?.main === "Clouds")
             emoji = "fa-cloud";
-        else if (data.weather[0]?.main == "Thunderstrom")
+        else if (data.weather[0]?.main === "Thunderstrom")
             emoji = "fa-bolt";
-        else if (data.weather[0]?.main == "Drizzle")
+        else if (data.weather[0]?.main === "Drizzle")
             emoji = "fa-cloud-rain";
-        else if (data.weather[0]?.main == "Rain")
+        else if (data.weather[0]?.main === "Rain")
             emoji = "fa-cloud-rain";
-        else if (data.weather[0]?.main == "Snow")
+        else if (data.weather[0]?.main === "Snow")
             emoji = "fa-snow-flake";
         else
             emoji = "fa-smog";
