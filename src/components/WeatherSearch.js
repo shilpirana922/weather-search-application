@@ -10,7 +10,7 @@ function WeatherSearch() {
     const [data, setData] = useState([]);
     const [input, setInput] = useState("");
 
-    let componentMount = true;
+    const [componentMount, setComponentMount] = useState(true);
 
     useEffect(() => {
         const fetchWeather = async () => {
@@ -20,15 +20,13 @@ function WeatherSearch() {
                 // console.log(await response.json());
             }
             return () => {
-                componentMount = false;
+                setComponentMount(false);
             }
         }
         fetchWeather();
-    }, [search]);
+    }, [search, componentMount]);
 
-    useEffect(()=>{
-     console.log(data);
-    }, [data])
+   
 
     let emoji = null;
     if (data.main !== undefined) {
